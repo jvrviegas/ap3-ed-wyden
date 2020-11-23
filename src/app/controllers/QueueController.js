@@ -16,7 +16,7 @@ class QueueController {
       include: [
         {
           model: Product,
-          as: 'products',
+          as: 'product',
           attributes: ['id', 'name', 'expiring_date'],
         },
       ],
