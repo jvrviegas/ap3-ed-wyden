@@ -12,15 +12,15 @@ class QueueController {
   }
 
   async store(req, res) {
-    const { product_id, validate } = req.body;
+    const { product_id, expiring_date } = req.body;
 
-    if (!product_id && !validate) {
+    if (!product_id && !expiring_date) {
       return res.status(400).json({ error: 'Dados inválidos' });
     }
 
     const queue = await Queue.create({
       product_id,
-      validate,
+      expiring_date,
     });
 
     if (!queue) {

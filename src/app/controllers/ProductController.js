@@ -12,15 +12,15 @@ class ProductController {
   }
 
   async store(req, res) {
-    const { name, validate, lote } = req.body;
+    const { name, expiring_date, lote } = req.body;
 
-    if (!name && !validate && !lote) {
+    if (!name && !expiring_date && !lote) {
       return res.status(400).json({ error: 'Dados inválidos' });
     }
 
     const product = await Product.create({
       name,
-      validate,
+      expiring_date,
       lote,
     });
 
