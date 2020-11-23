@@ -14,10 +14,6 @@ class Queue extends Model {
 
     return this;
   }
-
-  static associate(models) {
-    this.hasMany(models.Product, { as: 'products' });
-  }
 }
 
 export default Queue;

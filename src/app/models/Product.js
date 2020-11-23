@@ -15,6 +15,10 @@ class Product extends Model {
 
     return this;
   }
+
+  static associate(models) {
+    this.belongsTo(models.Queue, { as: 'products' });
+  }
 }
 
 export default Product;
