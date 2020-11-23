@@ -14,6 +14,10 @@ class Queue extends Model {
 
     return this;
   }
+
+  static associate(models) {
+    this.belongsTo(models.Product, { foreignKey: 'product_id', as: 'product' });
+  }
 }
 
 export default Queue;
