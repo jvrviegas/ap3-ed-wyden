@@ -18,7 +18,7 @@ routes.delete('/products/delete/:id', ProductController.delete);
 
 // Queue routes
 routes.get('/queue/list', QueueController.index);
-routes.post('/queue/add/:id', QueueController.store);
+routes.post('/queue/add', QueueController.store);
 routes.delete('/queue/delete/:id', QueueController.delete);
 
 export default routes;
