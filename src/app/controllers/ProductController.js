@@ -2,7 +2,9 @@ import Product from '../models/Product';
 
 class ProductController {
   async index(req, res) {
-    const products = await Product.findAll();
+    const products = await Product.findAll({
+      order: [['id', 'asc']],
+    });
 
     return res.status(200).json(products);
   }
@@ -33,6 +35,18 @@ class ProductController {
 
   async update(req, res) {
     return res.status(200).json(true);
+  }
+
+  async delete(req, res) {
+    const product = await Product.findByPk(req.params.id);
+
+    if (!product) {
+      return res.status(404).json({ error: 'Produto não encontrado' });
+    }
+
+    await product.destroy();
+
+    return res.status(200).json({ message: 'Produto excluído com sucesso' });
   }
 }
 
