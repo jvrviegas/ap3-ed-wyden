@@ -28,7 +28,7 @@ class ProductController {
       return res.status(400).json(false);
     }
 
-    return res.status(201).json(product);
+    return res.status(200).json(product);
   }
 
   async update(req, res) {
