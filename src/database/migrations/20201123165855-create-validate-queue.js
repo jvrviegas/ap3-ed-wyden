@@ -14,7 +14,7 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
-      validate: {
+      expiring_date: {
         type: Sequelize.DATE,
         allowNull: false,
       },

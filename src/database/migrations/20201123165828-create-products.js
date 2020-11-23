@@ -11,7 +11,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      validate: {
+      expiring_date: {
         type: Sequelize.DATE,
         allowNull: false,
       },

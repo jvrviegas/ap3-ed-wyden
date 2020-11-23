@@ -5,7 +5,7 @@ class Queue extends Model {
     super.init(
       {
         product_id: Sequelize.STRING,
-        validate: Sequelize.DATE,
+        expiring_date: Sequelize.DATE,
       },
       {
         sequelize,

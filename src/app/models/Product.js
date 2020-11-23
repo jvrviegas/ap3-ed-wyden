@@ -5,7 +5,7 @@ class Product extends Model {
     super.init(
       {
         name: Sequelize.STRING,
-        validate: Sequelize.DATE,
+        expiring_date: Sequelize.DATE,
         lote: Sequelize.INTEGER,
       },
       {
